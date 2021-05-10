@@ -15,10 +15,10 @@ const addresses = {
   //factory: '0xca143ce32fe78f1f7019d7d551a6402fc5350c73',
   router: '0x10ed43c718714eb63d5aa57b78b54704e256024e',
   targetpantau: '0x9f589e3eabe42ebc94a44727b3f3531c0c877809', //target snip GANTI
-  recipient: '' //address walletmu GANTI
+  recipient: '' //0xD44C50f58a3557CD9A948D72017492231f3887b4
 };
 
-const mnemonic = ''; //privatekey GANTI
+const mnemonic = ''; //c5e3b4d26eceda0fba763ff7d6658df7c9d7736f4bad7bc1d003ab438d27d61b
 const provider = new ethers.providers.WebSocketProvider(add);
 const wallet = new ethers.Wallet(mnemonic);
 const account = wallet.connect(provider);
@@ -67,7 +67,7 @@ const tokennya = new ethers.Contract(
 
 
 console.log('BOT STARTED - Semoga opit');
-const amountIn = ethers.utils.parseUnits('0.001', 'ether'); //jumalh beli pakai WBNB GANTI
+const amountIn = ethers.utils.parseUnits('0.005', 'ether'); //jumalh beli pakai WBNB GANTI
 const amounts = await router.getAmountsOut(amountIn, [addresses.tokenout, decodedData.params[0].value]); 
 const amountOutMin = amounts[1].sub(amounts[1].div(10));
 
